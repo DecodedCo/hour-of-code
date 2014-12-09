@@ -1,4 +1,4 @@
-ndow.onload = function(){
+window.onload = function(){
 	// ------- Canvas Initialization
 	var canvas = document.getElementsByTagName("canvas")[0];
 	var ctx = canvas.getContext("2d");
