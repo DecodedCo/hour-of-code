@@ -1,30 +1,29 @@
 // From thecodeplayer.com/walkthrough/html5-canvas-snow-effect
 function startSnowing(flakes, interval) {
-  	// ------- Canvas Initialization
-    canvas = document.getElementsByTagName("canvas")[0];
-    ctx = canvas.getContext("2d");
-    W = window.innerWidth;
-    H = window.innerHeight;
-    canvas.width = W;
-    canvas.height = H;
+  // ------- Canvas Initialization
+  canvas = document.getElementsByTagName("canvas")[0];
+  ctx = canvas.getContext("2d");
+  W = window.innerWidth;
+  H = window.innerHeight;
+  canvas.width = W;
+  canvas.height = H;
 
-    // ------- Snowflake Particles Configuration
-    mp = 25; //max particles
-    particles = [];
+  // ------- Snowflake Particles Configuration
+  mp = 25; //max particles
+  particles = [];
 
-    //angle will be an ongoing incremental flag. Sin and Cos functions will be applied to it to create vertical and horizontal movements of the flakes
-    angle = 0;
+  //angle will be an ongoing incremental flag. Sin and Cos functions will be applied to it to create vertical and horizontal movements of the flakes
+  angle = 0;
 
-
-	mp = flakes;
-	for(var i = 0; i < mp; i++)
-	{
-		particles.push({
-			x: Math.random()*W, //x-coordinate
-			y: Math.random()*H, //y-coordinate
-			r: Math.random()*4+1, //radius
-			d: Math.random()*mp //density
-		})
+  mp = flakes;
+  for(var i = 0; i < mp; i++)
+  {
+	  particles.push({
+	    x: Math.random()*W, //x-coordinate
+	    y: Math.random()*H, //y-coordinate
+	    r: Math.random()*4+1, //radius
+	    d: Math.random()*mp //density
+	  })
 	}
 
 	//animation loop
@@ -40,9 +39,9 @@ function drawSnowflakes()
 	ctx.beginPath();
 	for(var i = 0; i < mp; i++)
 	{
-		var p = particles[i];
-		ctx.moveTo(p.x, p.y);
-		ctx.arc(p.x, p.y, p.r, 0, Math.PI*2, true);
+	  var p = particles[i];
+	  ctx.moveTo(p.x, p.y);
+	  ctx.arc(p.x, p.y, p.r, 0, Math.PI*2, true);
 	}
 	ctx.fill();
 	updateSnowflakes();
@@ -54,21 +53,21 @@ function updateSnowflakes()
 	angle += 0.01;
 	for(var i = 0; i < mp; i++)
 	{
-		var p = particles[i];
-		//Updating X and Y coordinates
-		//We will add 1 to the cos function to prevent negative values which will lead flakes to move upwards
-		//Every particle has its own density which can be used to make the downward movement different for each flake
-		//Lets make it more random by adding in the radius
-		p.y += Math.cos(angle+p.d) + 1 + p.r/2;
-		p.x += Math.sin(angle) * 2;
+	  var p = particles[i];
+	  //Updating X and Y coordinates
+	  //We will add 1 to the cos function to prevent negative values which will lead flakes to move upwards
+	  //Every particle has its own density which can be used to make the downward movement different for each flake
+	  //Lets make it more random by adding in the radius
+	  p.y += Math.cos(angle+p.d) + 1 + p.r/2;
+	  p.x += Math.sin(angle) * 2;
 
-		//Sending flakes back from the top when it exits
-		//Lets make it a bit more organic and let flakes enter from the left and right also.
-		if(p.x > W+5 || p.x < -5 || p.y > H)
-		{
-			if(i%3 > 0) //66.67% of the flakes
-			{
-				particles[i] = {x: Math.random()*W, y: -10, r: p.r, d: p.d};
+	  //Sending flakes back from the top when it exits
+	  //Lets make it a bit more organic and let flakes enter from the left and right also.
+	  if(p.x > W+5 || p.x < -5 || p.y > H)
+	  {
+	    if(i%3 > 0) //66.67% of the flakes
+      {
+        particles[i] = {x: Math.random()*W, y: -10, r: p.r, d: p.d};
 			}
 			else
 			{
