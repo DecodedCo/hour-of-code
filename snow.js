@@ -1,20 +1,16 @@
 // From thecodeplayer.com/walkthrough/html5-canvas-snow-effect
+// Setup the canvas to draw snowflakes onto
 function startSnowing(flakes, interval) {
-  // ------- Canvas Initialization
   canvas = document.getElementsByTagName("canvas")[0];
   ctx = canvas.getContext("2d");
   W = window.innerWidth;
   H = window.innerHeight;
   canvas.width = W;
   canvas.height = H;
-
-  // ------- Snowflake Particles Configuration
-  mp = 25; //max particles
   particles = [];
-
-  //angle will be an ongoing incremental flag. Sin and Cos functions will be applied to it to create vertical and horizontal movements of the flakes
   angle = 0;
 
+  // create each individual snowflake
   mp = flakes;
   for(var i = 0; i < mp; i++)
   {
@@ -86,7 +82,3 @@ function updateSnowflakes()
     }
   }
 }
-
-// UNCOMMENT BELOW TO START SNOWING
-// CONFIGURE SNOW FLOW WITH # of FLAKES & HOW FAST
-//startSnowing(25, 33);
