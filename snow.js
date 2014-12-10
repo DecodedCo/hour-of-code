@@ -18,11 +18,11 @@ function startSnowing(flakes, interval) {
   mp = flakes;
   for(var i = 0; i < mp; i++)
   {
-	  particles.push({
-	    x: Math.random()*W, //x-coordinate
-	    y: Math.random()*H, //y-coordinate
-	    r: Math.random()*4+1, //radius
-	    d: Math.random()*mp //density
+    particles.push({
+      x: Math.random()*W, //x-coordinate
+      y: Math.random()*H, //y-coordinate
+      r: Math.random()*4+1, //radius
+      d: Math.random()*mp //density
 	  })
 	}
 
