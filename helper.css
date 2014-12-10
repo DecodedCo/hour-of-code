@@ -1,33 +1,32 @@
-/* CARD */
-* {margin: 0; padding: 0;}
-
 body {
-  /*You can use any kind of background here.*/
-  background: #6b92b9 url(http://i62.tinypic.com/5vn8xz.png);
+  background-color: green;
+  background-image: url(http://i62.tinypic.com/5vn8xz.png);
   background-size: cover;
   font-family: 'Playfair Display', serif;
 }
 
 h1 {
- font-size: 64px;
- color: #666666;
+  font-size: 300%;
+}
+
+p {
+  font-size: 150%;
 }
 
 section {
-  color: #777777;
-  background: rgba(255, 255, 255, .5);
+  color: gray;
+  background: rgba(255, 255, 255, 0.5);
   padding: 20px;
   margin: 50px 20px;
   border-radius: 8px;
   text-align: center;
 }
 
-/* SNOW */
+/* Snow */
 canvas {
   display: block;
   position: absolute;
   top: 0;
   width: 100%;
   height: 100%;
-  z-index: -1;
 }
