@@ -1,5 +1,4 @@
-hour-of-code
-============
+# Hour of Code 2015
 
 Boilerplate for Decoded's Hour of Code Holiday spectacular!
 
