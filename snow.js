@@ -1,4 +1,3 @@
-window.onload = function(){
 	// ------- Canvas Initialization
 	var canvas = document.getElementsByTagName("canvas")[0];
 	var ctx = canvas.getContext("2d");
@@ -90,4 +89,3 @@ window.onload = function(){
 	// UNCOMMENT BELOW TO START SNOWING
 	// CONFIGURE SNOW FLOW WITH # of FLAKES & HOW FAST  
 	//startSnowing(25, 33);
-}
