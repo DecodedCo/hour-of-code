@@ -89,5 +89,5 @@ window.onload = function(){
 
 	// UNCOMMENT BELOW TO START SNOWING
 	// CONFIGURE SNOW FLOW WITH # of FLAKES & HOW FAST  
-	startSnowing(25, 33);
+	//startSnowing(25, 33);
 }
